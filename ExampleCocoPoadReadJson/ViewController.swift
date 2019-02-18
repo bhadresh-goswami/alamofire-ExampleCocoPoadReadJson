@@ -7,12 +7,20 @@
 //
 
 import UIKit
+import Alamofire
+
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
+        Alamofire.request("https://restcountries.eu/rest/v2/all", method: .get).responseJSON { (res) in
+            
+            print(res)
+            
+        }
+    
     }
 
     override func didReceiveMemoryWarning() {
